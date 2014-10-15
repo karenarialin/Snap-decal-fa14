@@ -409,7 +409,7 @@ IDE_Morph.prototype.createLogo = function () {
     }
 
     this.logo = new Morph();
-    this.logo.texture = 'snap_logo_sm.png';
+    this.logo.texture = 'Costumes/unicorn2.png';
     this.logo.drawNew = function () {
         this.image = newCanvas(this.extent());
         var context = this.image.getContext('2d'),
@@ -558,7 +558,7 @@ IDE_Morph.prototype.createControlBar = function () {
     button.padding = 0;
     button.labelShadowOffset = new Point(-1, -1);
     button.labelShadowColor = colors[1];
-    button.labelColor = new Color(200, 0, 0);
+    button.labelColor = new Color(255, 119, 192);
     button.contrast = this.buttonContrast;
     button.drawNew();
     // button.hint = 'stop\nevery-\nthing';
@@ -588,7 +588,7 @@ IDE_Morph.prototype.createControlBar = function () {
     button.padding = 0;
     button.labelShadowOffset = new Point(-1, -1);
     button.labelShadowColor = colors[1];
-    button.labelColor = new Color(255, 220, 0);
+    button.labelColor = new Color(255, 119, 192);
     button.contrast = this.buttonContrast;
     button.drawNew();
     // button.hint = 'pause/resume\nall scripts';
@@ -612,7 +612,7 @@ IDE_Morph.prototype.createControlBar = function () {
     button.padding = 0;
     button.labelShadowOffset = new Point(-1, -1);
     button.labelShadowColor = colors[1];
-    button.labelColor = new Color(0, 200, 0);
+    button.labelColor = new Color(255, 119, 192);
     button.contrast = this.buttonContrast;
     button.drawNew();
     // button.hint = 'start green\nflag scripts';
@@ -1239,7 +1239,7 @@ IDE_Morph.prototype.createCorralBar = function () {
     newbutton.labelColor = this.buttonLabelColor;
     newbutton.contrast = this.buttonContrast;
     newbutton.drawNew();
-    newbutton.hint = "add a new Turtle sprite";
+    newbutton.hint = "add a new unicorn";
     newbutton.fixLayout();
     newbutton.setCenter(this.corralBar.center());
     newbutton.setLeft(this.corralBar.left() + padding);
@@ -5738,7 +5738,7 @@ TurtleIconMorph.prototype.createLabel = function () {
     }
     txt = new StringMorph(
         localize(
-            this.object instanceof SpriteMorph ? 'Turtle' : 'Empty'
+            this.object instanceof SpriteMorph ? 'Unicorn foal' : 'Empty'
         ),
         this.fontSize,
         this.fontStyle,
@@ -5883,7 +5883,7 @@ WardrobeMorph.prototype.updateList = function () {
     paintbutton.labelColor = TurtleIconMorph.prototype.labelColor;
     paintbutton.contrast = this.buttonContrast;
     paintbutton.drawNew();
-    paintbutton.hint = "Paint a new costume";
+    paintbutton.hint = "Make your very own mystical creature.";
     paintbutton.setPosition(new Point(x, y));
     paintbutton.fixLayout();
     paintbutton.setCenter(icon.center());

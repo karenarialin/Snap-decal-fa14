@@ -1244,7 +1244,7 @@ SyntaxElementMorph.prototype.labelPart = function (spec) {
             break;
         case '%clockwise':
             part = new SymbolMorph('turnRight');
-            part.size = this.fontSize * 1.5;
+            part.size = this.fontSize * 5;
             part.color = new Color(255, 255, 255);
             part.isProtectedLabel = false; // zebra colors
             part.shadowColor = this.color.darker(this.labelContrast);
@@ -1265,7 +1265,7 @@ SyntaxElementMorph.prototype.labelPart = function (spec) {
         case '%greenflag':
             part = new SymbolMorph('flag');
             part.size = this.fontSize * 1.5;
-            part.color = new Color(0, 200, 0);
+            part.color = new Color(255, 119, 192);
             part.isProtectedLabel = true; // doesn't participate in zebraing
             part.shadowColor = this.color.darker(this.labelContrast);
             part.shadowOffset = MorphicPreferences.isFlat ?
@@ -1274,7 +1274,7 @@ SyntaxElementMorph.prototype.labelPart = function (spec) {
             break;
         case '%stop':
             part = new SymbolMorph('octagon');
-            part.size = this.fontSize * 1.5;
+            part.size = this.fontSize * 7;
             part.color = new Color(200, 0, 0);
             part.isProtectedLabel = true; // doesn't participate in zebraing
             part.shadowColor = this.color.darker(this.labelContrast);
@@ -1877,7 +1877,7 @@ BlockMorph.prototype.toggleSnapSound = function () {
         this.snapSound = null;
     } else {
         BlockMorph.prototype.snapSound = document.createElement('audio');
-        BlockMorph.prototype.snapSound.src = 'click.wav';
+        BlockMorph.prototype.snapSound.src = 'Kitten.wav';
     }
     CommentMorph.prototype.snapSound = BlockMorph.prototype.snapSound;
 };
