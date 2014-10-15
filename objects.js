@@ -2548,7 +2548,7 @@ SpriteMorph.prototype.doSwitchToCostume = function (id) {
         costume;
     if (
         contains(
-            [localize('Turtle'), localize('Empty')],
+            [localize('Unicorn!'), localize('Empty')],
             (id instanceof Array ? id[0] : null)
         )
     ) {

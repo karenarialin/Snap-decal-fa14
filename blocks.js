@@ -6720,7 +6720,7 @@ InputSlotMorph.prototype.costumesMenu = function () {
         dict,
         allNames = [];
     if (rcvr instanceof SpriteMorph) {
-        dict = {Turtle : ['Turtle']};
+        dict = {Turtle : ['Unicorn!']};
     } else { // stage
         dict = {Empty : ['Empty']};
     }

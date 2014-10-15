@@ -739,7 +739,7 @@ IDE_Morph.prototype.createControlBar = function () {
         }
 
         this.label = new StringMorph(
-            (myself.projectName || localize('Give me a beeyootiful new name!')) + suffix,
+            (myself.projectName || localize('Welcome to the Land of Unicorns!')) + suffix,
             14,
             'sans-serif',
             true,
@@ -897,9 +897,12 @@ IDE_Morph.prototype.createStage = function () {
     if (this.stage) {
         this.stage.destroy();
     }
+     
+
     StageMorph.prototype.frameRate = 0;
     this.stage = new StageMorph(this.globalVariables);
     this.stage.setExtent(this.stage.dimensions); // dimensions are fixed
+  
     if (this.currentSprite instanceof SpriteMorph) {
         this.currentSprite.setPosition(
             this.stage.center().subtract(
@@ -909,6 +912,7 @@ IDE_Morph.prototype.createStage = function () {
         this.stage.add(this.currentSprite);
     }
     this.add(this.stage);
+   
 };
 
 IDE_Morph.prototype.createSpriteBar = function () {
@@ -923,7 +927,7 @@ IDE_Morph.prototype.createSpriteBar = function () {
         tabBar = new AlignmentMorph('row', -tabCorner * 2),
         tab,
         symbols = ['\u2192', '\u21BB', '\u2194'],
-        labels = ['don\'t rotate', 'can rotate', 'only face left/right'],
+        labels = ['don\'t spin me around!', 'spin me around!', 'only face east/west'],
         myself = this;
 
     if (this.spriteBar) {
@@ -1027,7 +1031,7 @@ IDE_Morph.prototype.createSpriteBar = function () {
             myself.currentSprite.isDraggable =
                 !myself.currentSprite.isDraggable;
         },
-        localize('draggable'),
+        localize('drag me around and around'),
         function () {
             return myself.currentSprite.isDraggable;
         }
@@ -1069,7 +1073,7 @@ IDE_Morph.prototype.createSpriteBar = function () {
         tabColors,
         null, // target
         function () {tabBar.tabTo('scripts'); },
-        localize('Scripts'), // label
+        localize('Tell the unicorn what to do'), // label
         function () {  // query
             return myself.currentTab === 'scripts';
         }
@@ -1088,7 +1092,7 @@ IDE_Morph.prototype.createSpriteBar = function () {
         tabColors,
         null, // target
         function () {tabBar.tabTo('costumes'); },
-        localize('Costumes'), // label
+        localize('Let\'s play dress up!'), // label
         function () {  // query
             return myself.currentTab === 'costumes';
         }
@@ -1107,7 +1111,7 @@ IDE_Morph.prototype.createSpriteBar = function () {
         tabColors,
         null, // target
         function () {tabBar.tabTo('sounds'); },
-        localize('Sounds'), // label
+        localize('Beep boop boop'), // label
         function () {  // query
             return myself.currentTab === 'sounds';
         }
@@ -1261,7 +1265,7 @@ IDE_Morph.prototype.createCorralBar = function () {
     paintbutton.labelColor = this.buttonLabelColor;
     paintbutton.contrast = this.buttonContrast;
     paintbutton.drawNew();
-    paintbutton.hint = "paint a new sprite";
+    paintbutton.hint = "paint a new unicorn";
     paintbutton.fixLayout();
     paintbutton.setCenter(this.corralBar.center());
     paintbutton.setLeft(
@@ -1404,12 +1408,15 @@ IDE_Morph.prototype.fixLayout = function (situation) {
                     / this.stage.dimensions.y
             ) * 10) / 10);
             this.stage.setCenter(this.center());
+            
         } else {
 //            this.stage.setScale(this.isSmallStage ? 0.5 : 1);
             this.stage.setScale(this.isSmallStage ? this.stageRatio : 1);
             this.stage.setTop(this.logo.bottom() + padding);
             this.stage.setRight(this.right());
+            
         }
+         
 
         // spriteBar
         this.spriteBar.setPosition(this.logo.bottomRight().add(padding));
@@ -2708,6 +2715,7 @@ IDE_Morph.prototype.newProject = function () {
     if (this.stage) {
         this.stage.destroy();
     }
+    
     if (location.hash.substr(0, 6) !== '#lang:') {
         location.hash = '';
     }
