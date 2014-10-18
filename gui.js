@@ -97,7 +97,7 @@ IDE_Morph.uber = Morph.prototype;
 IDE_Morph.prototype.setDefaultDesign = function () {
     MorphicPreferences.isFlat = false;
     SpriteMorph.prototype.paletteColor = new Color(121, 255, 94, 0.4);
-    SpriteMorph.prototype.paletteTextColor = new Color(78, 0, 198);
+    SpriteMorph.prototype.paletteTextColor = new Color(89, 8, 57);
     StageMorph.prototype.paletteTextColor
         = SpriteMorph.prototype.paletteTextColor;
     StageMorph.prototype.paletteColor = SpriteMorph.prototype.paletteColor;
@@ -111,7 +111,7 @@ IDE_Morph.prototype.setDefaultDesign = function () {
     IDE_Morph.prototype.groupColor
         = SpriteMorph.prototype.paletteColor.lighter(8);
     IDE_Morph.prototype.sliderColor = SpriteMorph.prototype.sliderColor;
-    IDE_Morph.prototype.buttonLabelColor = new Color(0, 255, 255);
+    IDE_Morph.prototype.buttonLabelColor = new Color(89, 8, 57);
     IDE_Morph.prototype.tabColors = [
         IDE_Morph.prototype.groupColor.darker(40),
         IDE_Morph.prototype.groupColor.darker(60),    
@@ -119,7 +119,7 @@ IDE_Morph.prototype.setDefaultDesign = function () {
     ];
     IDE_Morph.prototype.rotationStyleColors = IDE_Morph.prototype.tabColors;
     IDE_Morph.prototype.appModeColor = new Color();
-    IDE_Morph.prototype.scriptsPaneTexture = 'scriptsPaneTexture.gif';
+    IDE_Morph.prototype.scriptsPaneTexture = 'unicornland.png';
     IDE_Morph.prototype.padding = 5;
 
     SpriteIconMorph.prototype.labelColor
@@ -134,8 +134,8 @@ IDE_Morph.prototype.setDefaultDesign = function () {
 
 IDE_Morph.prototype.setFlatDesign = function () {
     MorphicPreferences.isFlat = true;
-    SpriteMorph.prototype.paletteColor = new Color(255, 255, 0);
-    SpriteMorph.prototype.paletteTextColor = new Color(70, 70, 70);
+    SpriteMorph.prototype.paletteColor = new Color(255, 255, 255);
+    SpriteMorph.prototype.paletteTextColor = new Color(89, 8, 57);
     StageMorph.prototype.paletteTextColor
         = SpriteMorph.prototype.paletteTextColor;
     StageMorph.prototype.paletteColor = SpriteMorph.prototype.paletteColor;
@@ -145,7 +145,7 @@ IDE_Morph.prototype.setFlatDesign = function () {
     IDE_Morph.prototype.backgroundColor = new Color(200, 200, 200);
     IDE_Morph.prototype.frameColor = new Color(255, 255, 255);
 
-    IDE_Morph.prototype.groupColor = new Color(230, 230, 230);
+    IDE_Morph.prototype.groupColor = new Color(255, 255, 255);
     IDE_Morph.prototype.sliderColor = SpriteMorph.prototype.sliderColor;
     IDE_Morph.prototype.buttonLabelColor = new Color(70, 70, 70);
     IDE_Morph.prototype.tabColors = [
@@ -5704,7 +5704,7 @@ TurtleIconMorph.prototype.init = function (aSpriteOrStage, aTemplate) {
         aTemplate // optional, for cached background images
     );
 
-    // override defaults and build additional components
+    // override defaults and build additional components      
     this.isDraggable = false;
     this.createThumbnail();
     this.padding = 2;

@@ -168,16 +168,16 @@ SpriteMorph.prototype.categories =
     ];
 
 SpriteMorph.prototype.blockColor = {
-    motion : new Color(255-74, 255-108, 255-212),
-    looks : new Color(255-143, 255-86, 255-227),
-    sound : new Color(255-207, 255-74, 255-217),     
-    pen : new Color(255-0, 255-161, 255-120),
-    control : new Color(255-230, 255-168, 255-34),
-    sensing : new Color(255-4, 255-148, 255-220),
-    operators : new Color(255-98, 255-194, 255-19),
-    variables : new Color(255-243, 255-118, 255-29),
-    lists : new Color(255-217, 255-77, 255-17),
-    other: new Color(255-150, 255-150, 255-150)
+    motion : new Color(0, 0, 0, 0.7),
+    looks : new Color(255-143, 255-86, 255-227, 0.7),
+    sound : new Color(255-207, 255-74, 255-217, 0.7),     
+    pen : new Color(255-0, 255-161, 255-120, 0.7),
+    control : new Color(255-230, 255-168, 255-34, 0.7),
+    sensing : new Color(255-4, 255-148, 255-220, 0.7),
+    operators : new Color(255-98, 255-194, 255-19, 0.7),
+    variables : new Color(255-243, 255-118, 255-29, 0.7),
+    lists : new Color(255-217, 255-77, 255-17, 0.7),
+    other: new Color(255-150, 255-150, 255-150, 0.7)
 };
 
 SpriteMorph.prototype.paletteColor = new Color(55, 55, 55);
