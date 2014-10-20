@@ -6255,7 +6255,7 @@ JukeboxMorph.prototype.updateList = function () {
     this.addBack(this.contents);
 
     txt = new TextMorph(localize(
-        'import a sound from your computer\nby dragging it into here'
+        'Turn on the dance music'
     ));
     txt.fontSize = 9;
     txt.setColor(SpriteMorph.prototype.paletteTextColor);
