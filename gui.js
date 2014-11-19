@@ -1735,11 +1735,13 @@ IDE_Morph.prototype.applySavedSettings = function () {
     }
 
     // language
-    if (language && language !== 'en') {
+    this.userLanguage = this.getBrowserLanguage();
+
+    /* if (language && language !== 'en') {
         this.userLanguage = language;
     } else {
         this.userLanguage = null;
-    }
+    } */
 
     //  click
     if (click && !BlockMorph.prototype.snapSound) {
@@ -3096,7 +3098,7 @@ IDE_Morph.prototype.switchToUserMode = function () {
     Process.prototype.isCatchingErrors = true;
     this.controlBar.updateLabel();
     this.isAutoFill = true;
-    this.isDraggable = false;
+    this.isDraggable = true;
     this.reactToWorldResize(world.bounds.copy());
     this.siblings().forEach(function (morph) {
         if (morph instanceof DialogBoxMorph) {
@@ -3391,6 +3393,13 @@ IDE_Morph.prototype.saveProjectsBrowser = function () {
 
 // IDE_Morph localization
 
+IDE_Morph.prototype.getBrowserLanguage = function () {
+    var lang = window.navigator.userLanguage || window.navigator.language;
+         lang = lang.substring(0,2);
+        return lang; 
+};
+
+
 IDE_Morph.prototype.languageMenu = function () {
     var menu = new MenuMorph(this),
         world = this.world(),
@@ -3406,10 +3415,13 @@ IDE_Morph.prototype.languageMenu = function () {
     menu.popup(world, pos);
 };
 
-IDE_Morph.prototype.setLanguage = function (lang, callback) {
+    //Implementation of localization
+    IDE_Morph.prototype.setLanguage = function (lang, callback) {
+
     var translation = document.getElementById('language'),
         src = 'lang-' + lang + '.js',
         myself = this;
+        console.log(lang);
     SnapTranslator.unload();
     if (translation) {
         document.head.removeChild(translation);
@@ -3423,10 +3435,15 @@ IDE_Morph.prototype.setLanguage = function (lang, callback) {
         myself.reflectLanguage(lang, callback);
     };
     document.head.appendChild(translation);
-    translation.src = src;
-};
+    translation.src = src; 
+}; 
+
+
+ 
+
 
 IDE_Morph.prototype.reflectLanguage = function (lang, callback) {
+
     var projectData;
     SnapTranslator.language = lang;
     if (!this.loadNewProject) {
@@ -3452,7 +3469,7 @@ IDE_Morph.prototype.reflectLanguage = function (lang, callback) {
     }
     this.saveSetting('language', lang);
     if (callback) {callback.call(this); }
-};
+}; 
 
 // IDE_Morph blocks scaling
 
